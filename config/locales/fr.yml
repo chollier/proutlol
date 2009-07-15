@@ -136,3 +136,26 @@ fr:
         less_than_or_equal_to: "doit être inférieur ou égal à {{count}}"
         odd: "doit être impair"
         even: "doit être pair"
+    
+        
+  authlogic:
+    error_messages:
+            login_blank: "ne peut être vide"
+            login_not_found: "n'est pas valide"
+            login_invalid: "devrait contenir uniquement des lettres, chiffres, espaces et.-_@"
+            consecutive_failed_logins_limit_exceeded: "Le limite d'echecs consécutifs de connexion a été atteinte, ce compte est désactivé."
+            email_invalid: "devrait ressembler à une adresse email."
+            password_blank: "ne peut être vide"
+            password_invalid: "n'est pas valide"
+            not_active: "Votre compte n'est pas activé"
+            not_confirmed: "Votre compte n'a pas été validé"
+            not_approved: "Votre compte n'a pas été approuvé"
+            no_authentication_details: "Vous n'avez pas donné d'informartions pour vous identifier"
+    models:
+            user_session: "UserSession"
+    attributes:
+            user_session: (or whatever name you are using)
+              login: "identifiant"
+              email: "email"
+              password: "mot de passe"
+              remember_me: "se souvenir"
