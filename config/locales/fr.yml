@@ -154,7 +154,7 @@ fr:
     models:
             user_session: "UserSession"
     attributes:
-            user_session: (or whatever name you are using)
+            user_session:
               login: "identifiant"
               email: "email"
               password: "mot de passe"
