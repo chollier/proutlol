@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts
   
   map.connect '/logout', :controller => 'user_sessions', :action => 'destroy'
-  map.connect '/logout', :controller => 'user_sessions', :action => 'new'
+  map.connect '/login', :controller => 'user_sessions', :action => 'new'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
