@@ -2,7 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
+  helper :all # include all helpers, all the time <= dumb.
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
@@ -37,6 +37,7 @@ class ApplicationController < ActionController::Base
           return false
         end
       end
+
       
       def require_admin
         if current_user && current_user.admin

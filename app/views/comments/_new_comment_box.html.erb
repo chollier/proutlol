@@ -1,0 +1,52 @@
+
+<div id="new_comment_box">
+
+	<h4>Nouveau Commentaire</h4>
+
+	<%= error_messages_for :comment %>
+
+	<% remote_form_for([@post, @post.comments.build]) do |f| -%>
+
+
+		<div id="new_comment_left">	
+  			<%= f.text_area :content %><br />
+		</div>
+		
+		<div id="new_comment_right">
+			
+			<% if current_user && current_user.admin %>
+				<%= hidden_field_tag "comment[name]", "Loïc Chollier" %>
+				<%= hidden_field_tag "comment[email]", "loic@chollier.com" %>
+				<%= hidden_field_tag "comment[url]", "http://loic.chollier.com" %>
+				<div id="comment_admin">
+					<p>Vous êtes connecté en tant qu'administrateur.</p>
+				</div>
+			<% else %>
+	
+			<div class="comment_arrow">
+  			<%= f.label :name, "Nom" %><br />
+			<%= f.text_field :name %>
+			</div>
+			
+			<div class="comment_arrow">
+			<%= f.label :email, "Adresse e-mail" %>
+			<%= f.text_field :email %>
+			</div>
+			
+			<div class="comment_arrow">
+			<%= f.label :url, "Site Web / Blog" %>
+			<%= f.text_field :url %>
+			</div>
+			
+			<% end -%>
+  		</div>
+
+		<div style="clear:left;"></div>
+		
+		<div id="new_comment_bottom">
+			<%= f.submit "Commenter", :disable_with => 'Envoi en cours' %>
+		</div>
+		
+	<% end -%>
+
+</div>

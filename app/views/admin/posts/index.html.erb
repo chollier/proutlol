@@ -1,0 +1,11 @@
+<div id="posts">
+<% @posts.each do |post| %>
+	<div id="post-<%= post.id %>" class="post">
+		<h3><%= post.title %></h3>
+		<div class="post-content">
+			<%= post.content %>
+		</div>
+    	<div><%= link_to 'Show', post %><% if require_admin %> | <%= link_to 'Edit', edit_post_path(post) %><% end %></div>
+  </div>
+<% end %>
+</div>

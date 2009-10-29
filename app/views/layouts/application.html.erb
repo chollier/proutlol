@@ -4,12 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'application' %>
-  <%= javascript_include_tag :defaults %>
+  <title><%= guess_page_title %></title>
+	<%= render :partial => "layouts/facebook" %>
+
+  	<%= stylesheet_link_tag 'application' %>
+  	<%= javascript_include_tag :defaults %>
 
 	<%= fb_connect_javascript_tag %>
-  <%= init_fb_connect "XFBML" %>
+  	<%= init_fb_connect "XFBML" %>
+
 
 </head>
 <body>
@@ -19,17 +22,24 @@
 	</div>
 	
 	<div id="header">
-		<h1>Ouagadoudou</h1>
+		<h1><%= link_to "Ouagadoudou", root_path, :title => "Le Blog de Loïc Chollier", :name => "Accueil" %></h1>
 	</div>
 	
-	<div id="main">
-		<div id="content">
+	<div id="main">	
+		
+		<div id="sidebar">
+			<div id="presentation" class="sidebloc">
+				<span class="sidetitle">A propos</span>
+				<p><img src="/images/Loic_Chollier.jpg" alt="Loïc Chollier" title="Photo de Loïc Chollier" width="64px" height="49px" />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			
+		</div>
 
+		<div id="content">
 		  <%= yield %>
 		</div>
 		
-		<div id="sidebar">
-		</div>
+		
 	</div>
 
 

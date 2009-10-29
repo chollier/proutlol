@@ -1,0 +1,9 @@
+
+    <div id="comment-<%= comment.id %>" class="comment_box<%= comment.user && comment.user.is_admin? ? " comment_admin" : '' %>"><a name="comment-<%= comment.id %>" title="Commentaire de <%= comment.name %> sur <%= comment.post.title %>"></a>
+		<p><%=h comment.content %></p>
+		<div class="comment_infos">
+			<p><% if current_user && current_user.admin %><%= link_to "Supprimer", admin_comment_path(comment), :method => :delete %> | <% end %>Par <strong><%= link_to_if(comment.url, comment.name, comment.url, :rel => "nofollow") %></strong> le <%= comment.created_at.strftime("%d %B %Y à %kH%M") %> | <a href="#comment-<%= comment.id %>" title="Commentaire de <%= comment.name %> sur <%= comment.post.title %>">permalien</a></p>
+		</div>
+	</div>
+
+

@@ -4,6 +4,10 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.integer :user_id
+      t.string :permalink
+      t.string :facebook_title
+      t.text :facebook_description
+      t.string :facebook_image
       t.timestamps
     end
   end

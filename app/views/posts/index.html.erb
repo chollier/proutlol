@@ -1,18 +1,22 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-  </tr>
-
+<div id="posts">
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<div id="post-<%= post.id %>" class="post">
+		<h2><%= link_to post.title, permalink_path(post), :title => post.title %></h2>
+		<div class="post-content">
+			<%= post.content %>
+		</div>
+    	<div class="post_infos">
+			<p>
+				<span class="share">
+					<%= twitter_share(post) %> <%= facebook_share(post) %>
+				</span>
+			<% if current_user && current_user.admin %><%= link_to 'Edit', edit_admin_post_path(post.id) %> | <% end %>
+			<%- if post.comments.size > 0 -%>
+				<%= link_to "#{post.comments.size} commentaire#{post.comments.size > 1 ? 's' : ''}", permalink_path(post, :anchor => "comments") %> | 
+			<%- end -%>
+			Publié le <%= post.created_at.strftime("%d %b %Y") %> par <%= link_to "Lo&iuml;c Chollier", "http://loic.chollier.com", :title => "Loïc Chollier" %>
+			</p>
+		</div>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New post', new_post_path %>
+</div>

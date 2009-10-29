@@ -1,0 +1,13 @@
+<% if controller_name == "posts" && controller.action_name == "show" %>
+	<meta name="title" content="<%= @post.facebook_title ? @post.facebook_title : guess_page_title %>" />
+	<% if @post.facebook_description %>
+		<meta name="description" content="<%= @post.facebook_description %>" />
+	<% end -%>
+	<% if @post.facebook_image %>
+	<link rel="image_src" href="<%= @post.facebook_image %>" />
+	<% end -%>
+	
+	 <link rel="canonical" href="<%= permalink_url(@post) %>" />
+<% end %>
+
+<meta name="medium" content="blog" />

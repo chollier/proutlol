@@ -1,0 +1,2 @@
+page.insert_html :bottom, "new_comment_receiver", {:partial => "comment_added", :object => @comment, :as => :comment}
+page.visual_effect :toggle_appear, "comment-#{@comment.id}", :duration => 1

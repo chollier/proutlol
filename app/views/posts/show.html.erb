@@ -1,3 +1,16 @@
+<h2><%= link_to @post.title, permalink_path(@post) %></h2>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div id="main_post_text">
+<%= @post.content %>
+</div>
+
+<div class="comments">
+	<h3><%= link_to "Commentaires", "#comments", :name => "comments", :title => "Commentaires de #{@post.title}" %></h3>
+	<%= render :partial => 'comments/comment', :collection => @post.comments %>
+	
+	<div id="new_comment_receiver">
+	</div>
+
+	<%= render :partial => "comments/new_comment_box" %>
+	
+</div>

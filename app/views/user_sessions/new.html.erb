@@ -1,16 +1,16 @@
-<h1>Login</h1>
+<h2>Connexion</h2>
  
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
-  <%= f.label :login %><br />
+  <%= f.label :login, "Identifiant" %><br />
   <%= f.text_field :login %><br />
   <br />
-  <%= f.label :password %><br />
+  <%= f.label :password, "Mot de passe" %><br />
   <%= f.password_field :password %><br />
   <br />
-  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
+  <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me, "Se souvenir" %><br />
   <br />
-  <%= f.submit "Login" %><br />
+  <%= f.submit "Connexion" %><br />
   <br />
 
 
