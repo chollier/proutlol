@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  default_scope :order => "id DESC"
   belongs_to :user
   has_many :comments
   has_many :shares

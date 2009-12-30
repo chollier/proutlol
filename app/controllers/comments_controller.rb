@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     
-    @comment.post_id = Post.find_by_permalink(params[:post_id])
+    @comment.post_id = Post.find_by_permalink(params[:post_id]).id
     
     @comment.user = current_user
 

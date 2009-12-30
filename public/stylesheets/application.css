@@ -33,6 +33,7 @@ h1 {
 
 h2 {
 	font-size: 2em;
+	line-height: 1em;
 }
 
 h2 a:hover, h2 a:visited, h2 a:focus {
