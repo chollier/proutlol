@@ -1,1 +1,4 @@
 log/* !.gitignore
+log/*.log
+Capfile
+config/deploy.rb
