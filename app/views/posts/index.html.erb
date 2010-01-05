@@ -14,7 +14,7 @@
 			<%- if post.comments.size > 0 -%>
 				<%= link_to "#{post.comments.size} commentaire#{post.comments.size > 1 ? 's' : ''}", permalink_path(post, :anchor => "comments") %> | 
 			<%- end -%>
-			Publié le <%= post.created_at.strftime("%d %b %Y") %> par <%= link_to "Lo&iuml;c Chollier", "http://loic.chollier.com", :title => "Loïc Chollier" %>
+			Publié le <%= post.created_at.strftime("%d %b %Y") %> par l'administrateur.
 			</p>
 		</div>
   </div>

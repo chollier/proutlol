@@ -2,7 +2,7 @@
 module ApplicationHelper
   
   def guess_page_title
-    blogname = "Le blog de Loïc Chollier"
+    blogname = "Ouagadoudou"
     case controller_name
     when "posts"      
       case controller.action_name
